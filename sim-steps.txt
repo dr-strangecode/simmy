@@ -1,0 +1,9 @@
+load 'sim.rb'
+q = Queue.new
+a = Submitter.new(100,10,q)
+a.set_distribution(ALL_REQ_DIST)
+a.generate_requests
+q.set_workers(10)
+a.submit
+q.submit_to_workers
+q.run_workers
